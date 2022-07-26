@@ -23,7 +23,7 @@ nav {position:fixed; width:100%; top:0;  padding:20pt 10pt 10pt 10pt; font-weigh
 nav.act {background:#0359ae;}
 nav> div {max-width:1490px; margin:auto; display:flex;}
 nav p {flex:1; font-size:1.2rem; color:white;}
-nav a {margin-left:20pt; color:#ebe5d9; text-shadow:0 0 5px blue;}
+nav a {margin-left:20pt; color:#ebe5d9; text-shadow:0 0 5px blue; padding:5px;}
 nav a:hover, a.active {color:#14b09b; font-size:1.4rem;}
 nav a {transition:0.3s; font-size:1.2rem;}
 /*.menu.act	{color:#00aeff; font-size:1.1rem;}*/
@@ -63,9 +63,16 @@ h2 {text-align:center; font-size:4rem; margin-bottom:60pt; font-family: 'Oleo Sc
 /*************퍼센트 조절***************/
 #skill> div {display:flex; align-items:center;}
 #skill> div> span {display:block; width:100px; color:#5D5D5D;}
-#skill> div> div {width:200px; height:20px; background:white; margin-left:10px; border:1px solid #8dc8e4;}
-#skill> div> div span {display:block; height:100%; background:#8dc8e4; text-align:right; font-size:0.9rem; font-weight:bold; color:#444444; line-height:130%; padding-right:6px; width:0;}
+#skill> div> div {width:200px; height:20px; background:white; margin-left:10px; /*border:1px solid #8dc8e4;*/ border-radius:30px;}
+#skill> div> div span {display:block; height:100%; /*background:#8dc8e4;*/ text-align:right; font-size:0.9rem; font-weight:bold; color:white; line-height:130%; padding-right:6px; width:0; border-radius:30px;}
 
+
+.w1 {background:#01c5f5;}
+.w2 {background:#f08a29;}
+.w3 {background:#e64c25;}
+.w4 {background:#2867ef;}
+.w5 {background:#075d95;}
+.w6 {background:#3bb579;}
 .w1, .w2, .w3, .w4 , .w5 .w6 {width:0;}
 
 

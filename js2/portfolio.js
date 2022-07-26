@@ -31,11 +31,15 @@
 	
 	
 	$(".portfolio-items> div").click(function(){
-		$("nav").removeClass("act");
+		if( $(window).width() > 768 ){
+			$("nav").removeClass("act");
+		}
 	});
 	
 	$("#black button").click(function(){
-		$("nav").addClass("act");
+		if( $(window).width() > 768 ){
+			$("nav").addClass("act");
+		}
 	});
 	
 

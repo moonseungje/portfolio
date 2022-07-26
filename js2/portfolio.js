@@ -30,7 +30,7 @@
 	});*/
 	
 	
-	$(".portfolio-items> div").click(function(){
+	$(".portfolio-items> div.eventDesign").click(function(){
 		if( $(window).width() > 768 ){
 			$("nav").removeClass("act");
 		}

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문승제의 포트폴리오</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<!--<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">-->
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js2/portfolio.js"></script>
+<link rel="shortcut icon" href="#">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+<link rel="stylesheet" href="css2/portfolio.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="bg/style.css">
+
+<script src="bg/bg.js"></script>
+
+
+<script src="js/jquery.1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+
+	$(".hover-bg>a:not(.noBlack)").click(function(){
+		var x1 = $(this).find("img").attr("src");
+		var x2 = x1.replace("small","large");
+		var y = $(this).find("h4").text();
+		//alert(x + y);		
+		
+		$("#black").fadeIn();
+		$("#black>h1").text(y);
+		$("#black img").attr({"src": x2, "alt":y , "max-width" : "1000px"});
+		
+		$("body").removeClass().css("overflow","hidden");
+		$("body>div").last().remove();
+	});
+	$("#black>button").click(function(){
+		$("#black").fadeOut();
+		$("body").css("overflow","auto");
+	});
+	$(document).keydown(function(e){
+		if(e.keyCode==27){
+			$("#black").fadeOut();	
+			$("body").css("overflow","auto");
+		}	
+	});
+});
+
+function clickEffect(e){
+	var d = document.createElement("div");
+	d.className="clickEffect";
+	d.style.top = e.clientY+"px";d.style.left=e.clientX+"px";
+	document.body.appendChild(d);
+	d.addEventListener("animationend",function(){d.parentElement.removeChild(d);}.bind(this) )
+}
+document.addEventListener("click",clickEffect);
+
+</script>
+
+<style>
+
+#black {position:fixed; width:100%; height:100vh; background:rgba(0,0,0,0.8); top:0; left:0; z-index:2;overflow:auto; padding-top:10px; text-align:center; display:none;}
+#black>h1 {color:white; font-size:1.5rem;}
+#black>button {background:transparent; border:none;}
+#black img {display:block; margin:auto; max-width:95%;}
+@media (max-width:500px){
+	.categories ol.type {display:block; width:90vw;}
+	.categories ol.type li { margin:15px 10px; }
+}
+
+div.clickEffect{position:fixed; box-sizing:border-box; border-style:solid; border-color:dodgerblue; border-radius:50%; animation:clickEffect 0.4s ease-out; z-index:9999;}
+@keyframes clickEffect {
+	0%{opacity:1; width:0.5em; height:0.5em; margin:-0.25em; border-width:0.3em}
+	100% {opacity:0.1; width:10em; height:10em; margin:-5em; border-width:0.01em;}
+}
+
+
+
+.hero.is-gradient {
+    background: transparent;
+    position:absolute;
+		bottom:0;
+		width:100%;
+		height:70% !important;
+		
+}
+
+            #demo-canvas {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+            .hero.is-slanted:before {
+    background: transparent url("http://localhost:16930/assets/images/bg/shapes/slant.png") no-repeat scroll 0 bottom/100% auto;
+    content: "";
+    height: 270px;
+    width: 100%;
+    z-index: 1 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+#main-landing-title {
+    position: relative;
+    top: -110px;
+    font-family: 'Nexa Bold', sans-serif !important;
+    color: #fff;
+}
+
+#main-landing-title h1 {
+    position: relative;
+    margin-bottom: 0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+  margin-top: 90px;
+}
+.has-text-centered {
+    text-align: center !important;
+}
+.light-text {
+    color: #fff !important;
+}
+
+.hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hero-body {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-body {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 3rem 1.5rem;
+}
+</style>
+
+</head>
+<body>
+<div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+
+
+<!-- Header -->
+<nav>
+		<div>
+			<p>Moon Seung Je</p>
+			<div>
+				<a href="#top" class="menu act">Home</a>
+				<a href="#about" class="menu">About</a>
+				<a href="#portfolio2" class="menu">Portfolio</a>
+				<a href="#portfolio" class="menu">More</a>
+				<a href="#contact" class="menu">Contact</a>
+			</div>
+		</div>
+	</nav>
+	<header id="top">
+		<div id="typing"></div>
+		<div id="scroll">
+			<i class="fas fa-chevron-down"></i>
+			<a href="#about">Scroll</a>
+		</div>
+	</header>
+	<section id="about" class="area">
+		<h2>About</h2>
+		<img src="images/me.png" alt="문승제">
+		<p>
+			<q>연습 또 연습</q><br>
+			꾸준히 노력해서 발전하는 사람
+		</p>
+		<div>
+			<section>
+				<h3 id="pro">Profile</h3>
+				<p>
+					이름 : 문승제 (Moon Seung Je)<br>
+					나이 : 27세 (1996.01.18)<br>
+					주소 :  경기도 성남시<br>
+					연락처 : 010-2553-0265<br>
+					E-mail :moonsj0118@naver.com
+				</p>
+			</section>
+			<section>
+				<h3>Experiences & Education</h3>
+				<p>
+					2022.04.07 - 2022.08.23 : 이젠IT컴퓨터아카데미 웹 디자인&웹 퍼블리셔 과정 수료<br>
+					2020.03 - 2021.11 : JFINC 근무 (상암동 SBS 주조정실)<br>
+					2019.08.19 - 2019.12.03 : 그린컴퓨터아카데미 영상편집(포토샵, 일러스트, 프리미어, 에펙) 과정 수료<br>
+					2015.03 - 2018.07 : 서일대학교 스마트 기계 자동차학과 (중퇴) <br>
+					2012.03 - 2015.02 : 동광고등학교 졸업
+				</p>
+			</section>
+			<section id="skill">
+            <h3>Skill</h3>
+            <div id="photoshop">
+               <span>Photoshop</span>
+               <div><span class="w1">70%</span></div>
+            </div>
+            <div id="illustrator">
+               <span>Illustrator</span>
+               <div><span class="w2">60%</span></div>
+            </div>
+            <div id="html5">
+               <span>HTML5</span>
+               <div><span class="w3">80%</span></div>
+            </div>
+            <div id="css3">
+               <span>CSS3</span>
+               <div><span class="w4">80%</span></div>
+            </div>
+            <div id="jqurey">
+               <span>jQurey</span>
+               <div><span class="w5">70%</span></div>
+            </div>
+			  <div id="vue">
+               <span>Vue</span>
+               <div><span class="w6">50%</span></div>
+            </div>
+         </section>
+		</div>
+	</section>
+	<div id="portfolio2" class="area">
+		<h2>Portfolio</h2>
+		<section id="leeum">
+			<div>
+					<h3>생로랑 홈페이지</h3>
+					<ul>
+						<li>
+							<b>사이트명</b>
+							<span>SAINT LAURENT</span>
+						</li>						
+						<li>
+							<b>제작기간</b>
+							<span>2022.06.26 - 2022.07.08</span>
+						</li>
+						<li>
+							<b>제작물</b>
+							<span>메인페이지 / 서브페이지<br>( 남성쇼핑, 남성쇼핑 - NEW - FALL 22 , 남성쇼핑 - NEW - FALL 22의 첫 상품, 여성쇼핑, 로그인, 검색창)</span>
+						</li>
+						<li>
+							<b>컨셉</b>
+							<span>심플한, 고급스러운</span>
+						</li>
+						<li>
+							<b>컨셉설명</b>
+							<span>생로랑 웹페이지를 제 스타일로 리뉴얼 하였습니다. 기존 메인페이지가 적은 정보를 담고있어 메인페이지에서도 여러가지 정보를 볼 수 있도록 하였습니다.</span><br>						
+						</li>					
+					</ul>
+					
+					<a href="https://moonsj0118.cafe24.com/web/saint" target="_blank">웹사이트 바로가기</a>
+					<a href="https://moonsj0118.cafe24.com/web/saintmob"  onclick="window.open(this.href, 'win1', 'top=50, left=200 , width=414, height=736, toolbar=yes, scrollbars=no, resizable=yes'); return false;"   onkeypress="this.onclick()">모바일앱 바로가기</a>
+					
+				</div>
+				<div>
+				<img src="images/portfolio-8.jpg" alt="포트폴리오 SAINT LAURENT">
+			</div>
+		</section>
+		<section id="leeum">
+			<div>
+					<h3>MBC 웹사이트</h3>
+					<ul>
+						<li>
+							<b>사이트명</b>
+							<span>MBC</span>
+						</li>						
+						<li>
+							<b>제작기간</b>
+							<span>2022.07.12 - 2022.07.15</span>
+						</li>
+						<li>
+							<b>제작물</b>
+							<span>메인페이지</span>
+						</li>
+						<li>
+							<b>컨셉</b>
+							<span>심플한, 깔끔한</span>
+						</li>
+						<li>
+							<b>컨셉설명</b>
+							<span>현재 방송중인 프로그램과 인기프로그램 등 MBC의 프로그램들을 배치하고, 뉴스와 공지사항을 같이 두어서 정보를 한번에 볼 수 있도록 하였습니다.</span><br>						
+						</li>					
+					</ul>
+					
+					<a href="https://moonsj0118.cafe24.com/web/mbc" target="_blank">웹사이트 바로가기</a>
+					
+					
+				</div>
+				<div>
+				<img src="images/portfolio-9.jpg" alt="포트폴리오 MBC">
+			</div>
+		</section>
+		<section id="leeum">
+			<div>
+				<h3>이미테이션게임 웹페이지</h3>
+				<ul>
+					<li>
+						<b>사이트명</b>
+						<span>이미테이션게임</span>
+					</li>						
+					<li>
+						<b>제작기간</b>
+						<span>2022.06.20 - 2022.06.24</span>
+					</li>
+					<li>
+						<b>제작물</b>
+						<span>메인페이지 / 서브페이지 ( 영화소개, 사진/영상, 2차세계대전)</span>
+					</li>
+					<li>
+						<b>컨셉</b>
+						<span>기대감있는, 흥미진진한</span>
+					</li>
+					<li>
+						<b>컨셉설명</b>
+						<span>영화 '이미테이션게임'을 주제로 만든 웹페이지입니다. 작품에 대한 정보(개요, 등장인물, 스틸 컷, 트레일러)와 2차세계대전에 대한 내용도 담아 정보를 전달하기 위해 만들었습니다.</span><br>						
+					</li>					
+				</ul>
+				<a href="plan/game/index.html" target="_blank">웹사이트 제안서</a>
+				<a href="https://moonsj0118.cafe24.com/web/game" target="_blank">웹사이트 바로가기</a>
+				<a href="https://www.figma.com/proto/SzDOt8U2W9XpGrPjQM5IZc/%EC%9D%B4%EB%AF%B8%ED%85%8C%EC%9D%B4%EC%85%98%EA%B2%8C%EC%9E%84?node-id=1%3A2&starting-point-node-id=1%3A2" target="_blank" class="last">프로토타입 바로가기</a>
+			</div>
+			<div>
+				<img src="images/portfolio-6.jpg" alt="포트폴리오 이미테이션게임">
+			</div>			
+		</section>
+		<section id="burts">
+			<div>
+				<img src="images/portfolio-5.jpg" alt="포트폴리오 서울사진학원">
+			</div>
+			<div>
+				<h3>서울 사진학원 웹페이지</h3>
+				<ul>
+					<li>
+						<b>사이트명</b>
+						<span>서울 사진학원</span>
+					</li>
+					<li>
+						<b>제작기간</b>
+						<span>2022.06.10 - 2022.06.17</span>
+					</li>
+					<li><b>
+						제작물</b>
+						<span>메인페이지</span>
+					</li>
+					<li>
+						<b>컨셉</b>
+						<span>시원한, 밝은, 희망찬</span>
+					</li>
+					<li>
+						<b>컨셉설명</b>
+						<span>기존 웹사이트가 너무 오래되고, 한군데에 작게 뭉쳐있어 답답해 보이는 구조를 아래로 길게 풀어내어 시원시원한 느낌을 내도록 하였습니다. 또한 사진학원이라는 점에서 사진이 많이 들어가면 좋겠다고 생각하여 배경도 사진을 깔아서 만들었습니다. </span>
+					</li>
+				</ul>
+				<a href="plan/photo/index.html" target="_blank">리뉴얼 시안</a>
+				<a href="https://moonsj0118.cafe24.com/web/photo" target="_blank">웹사이트 바로가기</a>		
+				<!--<a href="site/jordan/index.html" onclick="window.open(this.href, 'win1', 'top=50, left=200 , width=375, height=667, toolbar=yes, scrollbars=no, resizable=yes'); return false;"   onkeypress="this.onclick()">반응형앱 프로토타입</a>-->
+			</div>
+		</section>
+		<section id="tae">
+			<div>
+				<h3>화산귀환 모바일 앱</h3>
+				<ul>
+					<li>
+						<b>사이트명</b>
+						<span>화산귀환</span>
+					</li>
+					<li>
+						<b>제작기간</b>
+						<span>2022.06.18 - 2022.06.20</span>
+					</li>
+					<li>
+						<b>제작물</b>
+						<span>메인페이지와 서브페이지(작품소개, 소식, 커뮤니티, 회차정보)</span>
+					</li>
+					<li>
+						<b>컨셉</b>
+						<span>화려한, 심플한</span>
+					</li>
+					<li>
+						<b>컨셉설명</b>
+						<span>소설, 웹툰 '화산귀환'에 대한 정보(작품, 작가, 회차)와 '화산귀환'을 좋아하는 사람들이 소통할 수 있도록 만든 페이지입니다.</span>
+					</li>
+				</ul>
+				<!--<a href="plan/krave/index.html" target="_blank">리뉴얼 기획서</a>-->
+				<a href="https://ovenapp.io/view/0BFiUVEQFLnT3pAve7URJHdroGrQ6Ax8/zDIos" onclick="window.open(this.href, 'win1', 'top=50, left=200 , width=414, height=736, toolbar=yes, scrollbars=no, resizable=yes'); return false;"   onkeypress="this.onclick()">프로토타입 바로가기</a>
+				<a href="https://moonsj0118.cafe24.com/web/hwasan"  onclick="window.open(this.href, 'win1', 'top=50, left=200 , width=414, height=736, toolbar=yes, scrollbars=no, resizable=yes'); return false;"   onkeypress="this.onclick()">모바일앱 바로가기</a>
+			</div>
+			<div>
+				<img src="images/portfolio-4.jpg" alt="화산귀환 모바일앱">
+			</div>
+		</section>
+		</div>
+<!-- Portfolio Section -->
+<div id="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2>MORE</h2>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">모두보기</a></li>
+            <li><a href="#" data-filter=".eventDesign">이벤트/배너디자인</a></li>
+            
+            <li><a href="#" data-filter=".webDesign">웹/앱디자인</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+				
+				 <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/hanwoori" target="_blank" title="한정식 한우리" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>한정식 한우리</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/21-small.jpg" class="img-responsive" alt="한정식 한우리"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="img/portfolio/01-large.jpg" title="CU+삼성증권 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>CU+삼성증권 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="여름폭염 이벤트"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/ulleung" target="_blank" title="울릉군 웹사이트" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>울릉군 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/23-small.jpg" class="img-responsive" alt="울릉군 웹사이트"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="img/portfolio/50-large.jpg" title="여름폭염 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>여름폭염 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/50-small.jpg" class="img-responsive" alt="여름폭염 이벤트"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/morning" target="_blank" title="아침고요펜션" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>아침고요펜션</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="아침고요펜션"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="img/portfolio/51-large.jpg" title="맞춤여행 상품">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>맞춤여행 상품</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/51-small.jpg" class="img-responsive" alt="맞춤여행 상품"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="img/portfolio/33-large.jpg" title="다시쓰는 소중한 물">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>다시쓰는 소중한 물</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/33-small.jpg" class="img-responsive" alt="다시쓰는 소중한 물"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/15-large.jpg" title="봄 페스티벌">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>봄 페스티벌</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/30-small.jpg" class="img-responsive" alt="봄 페스티벌"> </a> </div>
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="삼성PC코리아세일페스타">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>삼성PC코리아세일페스타</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="삼성PC코리아세일페스타"> </a> </div>
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="여행후기 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>여행후기 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="여행후기 이벤트"> </a> </div>
+          </div>
+        </div>
+				
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/chania" target="_blank" title="하니아" onclick="window.open('https://moonsj0118.cafe24.com/web/chania','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>하니아</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="하니아"> </a> </div>
+          </div>
+        </div>
+        
+       
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/lotus" target="_blank" title="연꽃마을축제 사이트 첫화면 시안" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>연꽃마을축제 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/25-small.jpg" class="img-responsive" alt="연꽃마을축제 사이트 첫화면 시안"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/swatch" target="_blank" title="Swatch 웹사이트" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>Swatch 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/20-small.jpg" class="img-responsive" alt="Swatch 웹사이트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/yujin" target="_blank"  title="유진종합건설 사이트 첫화면" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>유진종합건설 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="유진종합건설 사이트 첫화면"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="https://moonsj0118.cafe24.com/web/perfume" target="_blank" title="향수정보 모바일 앱" onclick="window.open('https://moonsj0118.cafe24.com/web/perfume','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack"> 
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>향수정보 모바일 앱</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="향수정보 모바일 앱"> </a> </div>
+          </div>
+        </div>
+		<div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/jaeil" target="_blank"  title="제일컨트리클럽 웹사이트" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>제일컨트리클럽 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/26-small.jpg" class="img-responsive" alt="농심사이트 회사소개 시안"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/fashion" target="_blank" title="패션정보 반응형" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>패션정보 반응형</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/27-small.jpg" class="img-responsive" alt="패션정보 반응형"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/14-large.jpg" title="빵빵한 충전타임 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>빵빵한 충전타임 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/14-small.jpg" class="img-responsive" alt="빵빵한 충전타임 이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/15-large.jpg" title="룰렛을 돌려라">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>룰렛을 돌려라</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/15-small.jpg" class="img-responsive" alt="룰렛을 돌려라"> </a> </div>
+          </div>
+        </div>
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="레모나-s 포스팅 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>레모나-s 포스팅 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="레모나-s 포스팅 이벤트"> </a> </div>
+          </div>
+        </div>
+				
+				<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/15-large.jpg" title="가을 할인 클라스">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>가을 할인 클라스</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/31-small.jpg" class="img-responsive" alt="가을 할인 클라스"> </a> </div>
+          </div>
+        </div>
+        	
+		<div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/18-large.jpg" title="학생할인이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>학생할인이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/18-small.jpg" class="img-responsive" alt="학생할인이벤트"> </a> </div>
+          </div>
+        </div>
+		
+				
+           
+				<div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://moonsj0118.cafe24.com/web/apple" target="_blank" title="애플 홈페이지" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>애플 홈페이지</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/35-small.jpg" class="img-responsive" alt="애플 홈페이지"></a></div>
+          </div>
+        </div>
+        <!--############### end ##############-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact Section -->
+<section id="contact" class="area">
+		<h2>
+			Contact us
+			<b>소중한 연락을 기다립니다!</b>
+		</h2>		
+		<div>
+			<section>
+				<i class="fas fa-envelope"></i>
+				<h3>E-mail</h3>
+				<p>moonsj0118@naver.com</p>
+			</section>
+			<section>
+				<a class="fas fa-phone-alt" href="tel:010-1234-5678"></a>
+				<h3>Phone</h3>
+				<a href="tel:010-1234-5678">010.2553.0265</a>
+			</section>
+		</div>
+		<div class="pageloader"></div>
+        <div class="infraloader is-active"></div>        
+        <!-- Hero and nav -->
+        <div id="large-header" class="hero is-slanted is-relative is-gradient is-fullheight is-halfed-mobile">
+        
+          <div id="main-hero" class="hero-body">
+                <div id="main-landing-title" class="container has-text-centered">
+                    <div class="columns">
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <h1 class="title light-text text-bold is-1">
+                            </h1>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="demo-canvas"></canvas>
+        </div>
+	</section>
+
+
+<section id="black">
+	<h1>PETIKET앱 다운로드 이벤트</h1>
+	<button type="button"><img src="#" alt="PETIKET앱 다운로드 이벤트"></button>
+</section>
+
+<script src="js/nivo-lightbox.js"></script> 
+<script src="js/jquery.isotope.js"></script>  
+<script src="js/main.js"></script>
+</body>
+</html>

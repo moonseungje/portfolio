@@ -243,7 +243,7 @@ h2 {text-align:center; font-size:4rem; margin-bottom:60pt; font-family: 'Oleo Sc
 #portfolio2 span {line-height:180%; text-align:justify;}
 #portfolio2 a   {padding:6pt 30pt; border-radius:20pt; border:1pt solid #ddd; color:black; font-size:1.rem; font-weight:500; transition:0.3s;}
 #portfolio2 a:first-of-type {margin-right:10pt;}
-#portfolio2 a:hover:not(#more a) {background:#555; color:white;}
+#portfolio2 a:hover:not(#more a) {background:#444; color:white;}
 
 
 .last {margin-left:10px;}

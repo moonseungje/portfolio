@@ -158,7 +158,7 @@
 			$(window).scroll(function(){
 				const eventtop = $("#portfolio").position().top;
 				const contacttop = $("#contact").position().top;
-				console.log(eventtop);
+				
 				if( $(window).scrollTop()>0){
 					$("nav a").eq(0).addClass("active").siblings().removeClass("active");
 				}

@@ -1,5 +1,15 @@
 ﻿$(document).ready(function(){
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//이벤트 썸네일이미지 마우스오버
 	$("#event> div> div").hover(
 		function(){
@@ -148,6 +158,7 @@
 			$(window).scroll(function(){
 				const eventtop = $("#portfolio").position().top;
 				const contacttop = $("#contact").position().top;
+				console.log(eventtop);
 				if( $(window).scrollTop()>0){
 					$("nav a").eq(0).addClass("active").siblings().removeClass("active");
 				}
@@ -157,7 +168,7 @@
 				if( $(window).scrollTop()>1600 ){
 					$("nav a").eq(2).addClass("active").siblings().removeClass("active");
 				}
-				if( $(window).scrollTop()>eventtop-300 ){
+				if( $(window).scrollTop()>6500){
 					$("nav a").eq(3).addClass("active").siblings().removeClass("active");
 				}
 				if( $(window).scrollTop()>contacttop-500 ){
@@ -177,7 +188,7 @@
 				if( $(window).scrollTop()>1600 ){
 					$("nav a").eq(2).addClass("active").siblings().removeClass("active");
 				}
-				if( $(window).scrollTop()>eventtop-300 ){
+				if( $(window).scrollTop()>7500 ){
 					$("nav a").eq(3).addClass("active").siblings().removeClass("active");
 				}
 				if( $(window).scrollTop()>contacttop-300 ){

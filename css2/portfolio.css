@@ -2,7 +2,130 @@
 
 /*공통*/
 *{margin:0; padding:0; box-sizing:border-box;}
-html,body {font:12pt/160% 'Noto Sans KR', sans-serif; letter-spacing: -0.75pt;  cursor:url(../cursor/cursor1.cur), url(../cursor/cursor.cur), auto ;}
+html,body {font:12pt/160% 'Noto Sans KR', sans-serif; letter-spacing: -0.75pt; cursor:url(../cursor/cursor1.cur), url(../cursor/cursor.cur), auto ;}
+
+
+main {position:relative; overflow: hidden;}
+
+
+@import url("https://fonts.googleapis.com/css?family=Lilita+One");
+
+
+.bubble {
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(3, 89, 174, 0.2) 100%);
+  box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.2), inset 1em 1em 1em rgba(3, 89, 174, 0.05), 0 1em 2em rgba(0, 0, 0, 0.25);
+}
+
+
+
+.b1 {
+  animation: floatup 30s linear infinite, sideways 5s ease-in-out infinite alternate;
+  left: 10%;
+  top: 100%;
+}
+
+.b2 {
+  animation: floatup 22s linear infinite, sideways 3s ease-in-out 1s infinite alternate;
+  left: 15%;
+  top: 30%;
+  transform: scale(0.7);
+}
+
+.b3 {
+  animation: floatup 23s linear infinite, sideways 4s ease-in-out 6s infinite alternate;
+  left: 20%;
+  transform: scale(1.2);
+}
+
+.b4 {
+  animation: floatup 36s linear infinite, sideways 7s ease-in-out 3s infinite alternate;
+  left: 25%;
+  top: 90%;
+  transform: scale(0.5);
+}
+
+.b5 {
+  animation: floatup 38s linear infinite, sideways 8s ease-in-out 3s infinite alternate;
+  left: 30%;
+  top: 30%;
+  transform: scale(0.4);
+}
+
+.b6 {
+  animation: floatup 27s linear infinite, sideways 5s ease-in-out 3.5s infinite alternate;
+  left: 40%;
+  top: 50%;
+  transform: scale(0.7);
+}
+
+.b7 {
+  animation: floatup 26s linear infinite, sideways 6s ease-in-out 4s infinite alternate;
+  left: 90%;
+  top: 90%;
+  transform: scale(0.6);
+}
+
+.b8 {
+  animation: floatup 32s linear infinite, sideways 4s ease-in-out 4s infinite alternate;
+  left: 10%;
+  top: 70%;
+  transform: scale(1);
+}
+
+.b9 {
+  animation: floatup 28s linear infinite, sideways 8s ease-in-out 4s infinite alternate;
+  left: 20%;
+  top: 50%;
+  transform: scale(0.5);
+}
+
+.b10 {
+  animation: floatup 35s linear infinite, sideways 6s ease-in-out 4s infinite alternate;
+  left: 60%;
+  top: 90%;
+  transform: scale(0.8);
+}
+
+.b11 {
+  animation: floatup 25s linear infinite, sideways 7s ease-in-out 4s infinite alternate;
+  left: 30%;
+  top: 60%;
+  transform: scale(0.6);
+}
+
+.b12 {
+  animation: floatup 29s linear infinite, sideways 4s ease-in-out 4s infinite alternate;
+  left: 0%;
+  top: 65%;
+  transform: scale(1);
+}
+
+
+@keyframes floatup {
+  0% {
+    margin-top: 0%;
+  }
+  100% {
+    margin-top: -150%;
+  }
+}
+@keyframes sideways {
+  0% {
+    margin-left: 0em;
+  }
+  100% {
+    margin-left: 20em;
+  }
+}
+
+
+
+
 
 
 
@@ -194,6 +317,7 @@ h2 {text-align:center; font-size:4rem; margin-bottom:60pt; font-family: 'Oleo Sc
 
 @media (max-width:600px) {
 	
+	.bubble {display:none;}
 	h2 {font-size:2.2rem;}
 	.area {/*padding-top:11vh;*/} 
 	#top {background-size:auto 100vh;}
